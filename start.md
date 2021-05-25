@@ -7,3 +7,5 @@
 ```shell
 jupyter-book create docs
 ```
+
+2. 修改书籍的配置文件 `docs/_config.yml`，并创建 Github Action。
