@@ -1,3 +1,3 @@
 # AI 世界
 
-[](start.md)
+[项目启动](start.md)
