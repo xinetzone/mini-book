@@ -27,7 +27,7 @@ execute:
   exclude_patterns: [] # 在执行中要“跳过”的模式列表（例如，需要很长时间的笔记本）
   timeout: 30 # 每个笔记本单元允许运行的最长时间（以秒为单位）。
   # 如果为 `true`，则将创建一个临时目录并将其用作命令工作目录（cwd），否则，笔记本的父目录将是 cwd。
-  run_in_temp: true
+  run_in_temp: false
   allow_errors: true # 如果为 `False`，则当代码单元引发错误时，执行将停止，否则所有单元将始终运行。
   stderr_output: show # 'show', 'remove', 'remove-warn', 'warn', 'error', 'severe' 之一
 
