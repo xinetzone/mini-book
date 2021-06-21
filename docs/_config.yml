@@ -1,0 +1,166 @@
+# Learn more at https://jupyterbook.org/customize/config.html
+
+#######################################################################################
+# 将为所有 Jupyter Book 加载的默认配置
+# 用户应该在自己的 `_config.yml` 文件中覆盖这些值
+# 这也是所有允许的键和值的“主列表”
+
+#######################################################################################
+# Book settings
+title: 品味人生 # 书的标题。将放置在左侧导航栏中。
+author: xinetzone
+copyright: "2021" # 版权年份将放置在页脚中
+logo: logo.jpg # 图书徽标的路径
+
+# 制作书籍时跳过的模式。可以是 glob-style (例如 "*skip.ipynb")
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
+# 自动排除目录中的文件
+only_build_toc_files: false
+
+#######################################################################################
+# Execution settings
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: cache # 是否在构建时执行笔记本。必须是 ("auto", "force", "cache", "off") 之一
+  cache: "" # jupyter 的缓存路径，该路径将用于存储执行工件。 `_build/.jupyter_cache/`
+  exclude_patterns: [] # 在执行中要“跳过”的模式列表（例如，需要很长时间的笔记本）
+  timeout: 30 # 每个笔记本单元允许运行的最长时间（以秒为单位）。
+  # 如果为 `true`，则将创建一个临时目录并将其用作命令工作目录（cwd），否则，笔记本的父目录将是 cwd。
+  run_in_temp: true
+  allow_errors: true # 如果为 `False`，则当代码单元引发错误时，执行将停止，否则所有单元将始终运行。
+  stderr_output: show # 'show', 'remove', 'remove-warn', 'warn', 'error', 'severe' 之一
+
+#######################################################################################
+# Parse and render settings
+parse:
+  myst_enable_extensions: # 在 myst 解析器中启用的默认扩展。参考 https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
+    - amsmath # 启用解析 LaTeX 样式的数学块
+    - colon_fence # 启用 ::: 防护栅栏，以便使其更易于在不支持 MyST 的界面中呈现
+    - deflist # 启用定义清单
+    - dollarmath # 为数学块支持 $$ 和 $ 语法
+    - html_admonition  # 启用纯定义的 HTML 的提示
+    - html_image # 启用解析原始 HTML 图像
+    - linkify # 自动检测 Markdown 中类似 HTML 的链接并将其转换为超链接
+    # - replacements
+    # - smartquotes
+    - substitution # 为了允许您定义 Markdown “变量”并在使用它们时置换文本
+  myst_url_schemes: [mailto, http, https] # 在 Markdown 链接中将被识别为外部 URL 的 URI 方案
+
+#######################################################################################
+# HTML-specific settings
+# 参考 https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  favicon: "page-logo.jfif" # 网站图标图像的路径
+  use_edit_page_button: false # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
+  use_repository_button: true # Whether to add a link to your repository button
+  use_issues_button: true # Whether to add an "open an issue" button
+  extra_navbar: | # Will be displayed underneath the left navbar.
+    <div class="w3-padding w3-card-4 w3-pale-green">
+      <a href="https://github.com/xinetzone" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+          data-position="top" data-delay="50">
+          <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:q735613050@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top"
+          data-delay="50">
+          <i class="fas fa-envelope-open"></i>
+      </a>
+      <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=735613050" class="tooltipped"
+          target="_blank" data-tooltip="QQ联系我: 735613050" data-position="top" data-delay="50">
+          <i class="fab fa-qq"></i>
+      </a>
+      <a href="https://www.zhihu.com/people/liu-xin-wei-55" class="tooltipped" target="_blank"
+          data-tooltip="关注我的知乎: liu-xin-wei-55" data-position="top" data-delay="50">
+          <i class="fab fa-zhihu1">知</i>
+      </a>
+      <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/xinet" class="tooltipped"
+          data-tooltip="领英联系我: xinet" data-position="top" data-delay="50">
+          <i class="fab fa-linkedin"></i>
+      </a>
+      <div><a href="https://github.com/xinetzone/mini-book">Jupyter Book</a> 版权所有</div>
+    </div> 
+  extra_footer: "" # Will be displayed underneath the footer.
+  google_analytics_id: "" # A GA id that can be used to track book views.
+  home_page_in_navbar: false # Whether to include your home page in the left Navigation Bar
+  baseurl: "" # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
+  comments:
+    hypothesis: true
+    utterances:
+      repo: "xinetzone/mini-book"
+
+#######################################################################################
+# LaTeX-specific settings
+latex:
+  latex_engine: pdflatex # one of 'pdflatex', 'xelatex' (recommended for unicode), 'luatex', 'platex', 'uplatex'
+  use_jupyterbook_latex: true # use jupyterbook-latex for pdf builds as default
+  latex_documents:
+    targetname: book.tex
+
+#######################################################################################
+# Launch button settings
+launch_buttons:
+  notebook_interface: classic # The interface interactive links will activate ["classic", "jupyterlab"]
+  binderhub_url: https://mybinder.org # The URL of the BinderHub (e.g., https://mybinder.org)
+  jupyterhub_url: "" # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
+  thebe: false # Add a thebe button to pages (requires the repository to run on Binder)
+  colab_url: "" # The URL of Google Colab (https://colab.research.google.com)
+
+repository:
+  url: https://github.com/xinetzone/mini-book # The URL to your book's repository
+  path_to_book: "docs" # A path to your book's folder, relative to the repository root.
+  branch: main # Which branch of the repository should be used when creating links
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib
+  
+#######################################################################################
+# Advanced and power-user settings
+sphinx:
+  local_extensions: # A list of local extensions to load by sphinx specified by "name: path" items
+  config: 
+    html_js_files:
+      - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
+    language: zh # https://www.w3schools.com/tags/ref_language_codes.asp
+    intersphinx_mapping:
+      wiki:
+        - "https://xinetzone.github.io/wiki/"
+        - null
+      # mini-book:
+      #   - "https://xinetzone.github.io/mini-book/"
+      #   - null
+      # plotly-book:
+      #   - "https://xinetzone.github.io/plotly-book/"
+      #   - null
+      # sympy-book:
+      #   - "https://xinetzone.github.io/sympy-book/"
+      #   - null
+      # jupyter-book:
+      #   - "https://xinetzone.github.io/jupyter-book/"
+      #   - null
+      # pytorch-book:
+      #   - "https://xinetzone.github.io/pytorch-book/"
+      #   - null
+      # tensorflow-book:
+      #   - "https://xinetzone.github.io/tensorflow-book/"
+      #   - null
+      # life:
+      #   - "https://xinetzone.github.io/life/"
+      #   - null
+      # ai-world:
+      #   - "https://xinetzone.github.io/ai-world/"
+      #   - null
+      # mathematics:
+      #   - "https://xinetzone.github.io/mathematics/"
+      #   - null
+      # linear-algebra:
+      #   - "https://xinetzone.github.io/linear-algebra/"
+      #   - null
+      # matrix-theory:
+      #   - "https://xinetzone.github.io/matrix-theory/"
+      #   - null
+  extra_extensions:
+    - sphinx_click.ext
+    - sphinx_inline_tabs
+    - sphinx.ext.intersphinx
+

@@ -1,0 +1,11 @@
+name: ai
+channels:
+  - default
+  - conda-forge
+dependencies:
+  - python=3.9
+  - anaconda-client
+  - sphinx
+  - pip
+  - pip:
+    - -r requirements.txt
