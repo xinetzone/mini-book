@@ -7,7 +7,7 @@
 
 #######################################################################################
 # Book settings
-title: 品味人生 # 书的标题。将放置在左侧导航栏中。
+title: "" # 书的标题。将放置在左侧导航栏中。
 author: xinetzone
 copyright: "2021" # 版权年份将放置在页脚中
 logo: logo.jpg # 图书徽标的路径
@@ -124,9 +124,6 @@ sphinx:
       wiki:
         - "https://xinetzone.github.io/wiki/"
         - null
-      # mini-book:
-      #   - "https://xinetzone.github.io/mini-book/"
-      #   - null
       # plotly-book:
       #   - "https://xinetzone.github.io/plotly-book/"
       #   - null
