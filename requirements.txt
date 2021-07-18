@@ -1,0 +1,20 @@
+numpy
+pandas
+matplotlib
+ipywidgets
+nbclient
+jupyter-book
+ghp-import
+sphinx_inline_tabs
+sphinx-click
+# sphinxext-rediraffe
+sympy
+statsmodels
+jupyter-dash
+plotly
+# pyorbital
+# gunicorn
+# dash-xinet -i https://pypi.org/simple/ 
+# sanstyle -i https://pypi.org/simple/ 
+# Flask-Caching
+# redis
