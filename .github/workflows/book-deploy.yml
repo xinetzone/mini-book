@@ -22,7 +22,7 @@ jobs:
       - run: which python
       - name: Install dependencies
         run: |
-          pip install -r etc/requirements.txt
+          pip install -r requirements.txt
           conda install ipykernel
           python -m ipykernel install --user --name ai --display-name "ai"
       - name: Install theme
