@@ -12,5 +12,7 @@ root: index # A path to the *root page* (landing page) of your book
 parts:
 - caption: 案例
   chapters:
+  - file: start
   - file: markdown
   - file: notebooks
+  
