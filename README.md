@@ -4,4 +4,8 @@
 
 [项目启动](start.md)
 
-更好的模板见：[sanstyle-starter](https://github.com/xinetzone/sanstyle-starter)。
+更好的模板见：
+
+- [sanstyle-starter](https://github.com/xinetzone/sanstyle-starter)
+- [通用 AI 平台](https://xinetzone.github.io/sphinx-demo/)
+- [C++ 平台](https://github.com/xinetzone/cpp-demo)
